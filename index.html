@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
     <head>
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -24,7 +23,7 @@
             let password = document.getElementById("password");
             let allusers = localStorage.getItem("users")
             allusers = JSON.parse(allusers);
-            const foundUser = allusers.find((el) => el.username === username.value && el.password === password.value);
+            const foundUser = (allusers || []).find((el) => el.username === username.value && el.password === password.value);
             if (foundUser) {
                 localStorage.setItem('isLoggedIn', 'true');
                 localStorage.setItem('username', username.value)
